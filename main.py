@@ -132,7 +132,7 @@ agent2 = Agent(
 
 # This should trip the guardrail
 try:
-    await Runner.run(agent2, "Hello, can you help me solve for x: 2x + 3 = 11?", run_config = config)
+    Runner.run_sync(agent2, "Hello, can you help me solve for x: 2x + 3 = 11?", run_config = config)
     print("Guardrail didn't trip - this is unexpected")
 
 except OutputGuardrailTripwireTriggered:
